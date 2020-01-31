@@ -1,0 +1,19 @@
+@import './variables';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+body {
+  background-color: white;
+  background: url(../assets/img/download.jpeg) center;
+}
+
+footer {
+  background-color: rgb(15, 12, 12);
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+
+small {
+  color: red;
+}

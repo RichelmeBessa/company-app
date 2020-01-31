@@ -1,0 +1,29 @@
+<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+  <div class="card">
+    <img src="../../../assets/img/office.svg" class="card-img" width="auto" height="150px">
+    <div class="card-body">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-12">
+              <label for="username">Login</label>
+              <input class="form-control" type="text" id="username" formControlName="username">
+              <small *ngIf="form.get('username').invalid && form.get('username').touched">Invalid
+                Field</small>
+            </div>
+            <div class="col-12">
+              <label for="password">Senha</label>
+              <input class="form-control" type="password" id="password" formControlName="password">
+              <small *ngIf="form.get('password').invalid && form.get('password').touched"> Invalid Field</small>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="w-100">
+        <div class="p-1">
+          <button class="btn btn-block btn-success" (click)="login()">Entrar</button>
+        </div>
+    </div>
+  </div>
+
+</div>

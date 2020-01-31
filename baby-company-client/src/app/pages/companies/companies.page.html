@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Listas de Empresas</h5>
+    <div class="card-text">
+      <div class="table-responsive p-1">
+        <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Razão Social</th>
+              <th>Nome Fantasia</th>
+              <th>CNPJ</th>
+              <th>Inscrição Estadual</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let company of companies">
+              <td>{{ company.id }}</td>
+              <td>{{ company.registeredName }}</td>
+              <td>{{ company.tradingName }}</td>
+              <td>{{ company.taxPayerRegistration }}</td>
+              <td>{{ company.stateSubscription }}</td>
+              <td class="d-flex">
+                <div class="p-1">
+                  <button class="btn btn-success" [routerLink]="['/admin', 'companies', company.id]">
+                    <fa-icon [icon]="edit"></fa-icon>
+                  </button>
+                </div>
+                <div class="p-1">
+                  <button class="btn btn-danger" (click)="deleteCompany(company.id)">
+                    <fa-icon [icon]="trash"></fa-icon>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
